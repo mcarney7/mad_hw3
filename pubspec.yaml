@@ -1,14 +1,14 @@
 name: card_matching_game
 description: A card-matching game with animation and state management.
 
-# The following defines the Dart SDK version constraints
+# Specifies the Dart SDK version constraints
 environment:
   sdk: '>=3.5.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.0  # Adding provider for state management
+  provider: ^6.0.0  # Adding the provider package for state management
 
 dev_dependencies:
   flutter_test:
@@ -16,12 +16,11 @@ dev_dependencies:
 
 flutter:
 
-  # The assets section allows you to add files to your app's assets directory.
-  # Here we are including an image for the card back design.
+  # The assets section includes image assets used in the app
   assets:
-    - assets/card_back.png
+    - assets/card_back.png  # Path to the card back image used when cards are face-down
 
-  # An optional section for fonts
+  # An optional section for fonts (commented out here)
   # fonts:
   #   - family: Roboto
   #     fonts:
