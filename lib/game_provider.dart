@@ -26,7 +26,6 @@ class GameProvider extends ChangeNotifier {
     _initializeGame();
   }
 
-  // Initialize the game
   void _initializeGame() {
     _flippedCardsCount = 0;
     _score = 0;
@@ -40,16 +39,14 @@ class GameProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Generate pairs of card content (you can customize the card content)
   List<String> _generateCardContent() {
     List<String> baseCards = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-    return List<String>.from(baseCards)..addAll(baseCards); // Create pairs
+    return List<String>.from(baseCards)..addAll(baseCards); 
   }
 
-  // Handle card flipping logic
   void flipCard(int index) {
     if (_cards[index].isMatched || _cards[index].isFaceUp || _flippedCardsCount == 2) {
-      return; // Can't flip more than two cards at once or already matched cards
+      return; 
     }
 
     _cards[index].isFaceUp = true;
@@ -61,7 +58,6 @@ class GameProvider extends ChangeNotifier {
     }
   }
 
-  // Check if two flipped cards match
   void _checkForMatch() async {
     _moves++;
     await Future.delayed(const Duration(seconds: 1));
@@ -92,12 +88,10 @@ class GameProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Check if all pairs are matched
   bool _checkGameOver() {
     return _cards.every((card) => card.isMatched);
   }
 
-  // Reset the game
   void resetGame() {
     _initializeGame();
   }

@@ -19,14 +19,16 @@ class CardWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 400),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: card.isFaceUp ? Colors.white : Colors.blue,
+          color: card.isFaceUp ? Colors.white : Colors.transparent,  // transparent for back
           boxShadow: const [BoxShadow(blurRadius: 5)],
         ),
         child: Center(
-          child: Text(
-            card.isFaceUp ? card.content : '',
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
+          child: card.isFaceUp 
+              ? Text(
+                  card.content,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                )
+              : Image.asset('assets/card_back.png'),  // Use the back design when face-down
         ),
       ),
     );
